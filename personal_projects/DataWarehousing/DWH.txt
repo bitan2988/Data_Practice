@@ -1,0 +1,17 @@
+In this project we initially had 15 tables in the DB.
+
+To convert it into a DWH we first will combine few tables into 1 as we can see that 
+redundant data is present across many table and to extract it requires a lot of 
+complex JOINS.
+
+So we will make a Star-Schema from it.
+
+Fact-Table:
+    fact_sales : hold all sales data, PK of all other dimension_tables and sales_amount
+
+
+So the Dimension tables we will have will be
+    dim_date : for all date related queries
+    dim_customer : we will basically merge all the customer adresses into one
+    dim_store : to hold all store related data into one
+    sim_film : merge film related data into one

@@ -1,0 +1,118 @@
+
+After observation we can decide on merging all tables into 5 main tables
+
+    order_details_fact
+
+
+    employees_dim
+        employees
+        employeeterritories
+        region
+        territories
+    customer_dim
+        'customers', 
+        'customercustomerdemo', 
+        'customerdemographics'
+    shippers_dim
+        orders
+        shippers
+    products_dim
+        products
+        suppliers
+        categories
+
+
+CREATE TABLE order_details_fact
+(
+    
+)
+
+
+
+CREATE TABLE employees_dim
+(
+    employeeid smallint
+    title varchar(200)
+    titleofcourtesy	varchar(200)
+    lastname varchar(200)
+    firstname varchar(200)
+    birthdate date
+    address varchar(200)
+    city varchar(200)
+    postalcode varchar(6)
+    country varchar(100)
+    extension varchar(5)
+    homephone varchar(10)
+    photo bytea
+    photopath varchar(400)
+    hiredate date
+    reportsto smallint
+    notes text
+    territoryid varchar(20)
+    regionid smallint
+    region varchar(200)
+    regiondescription varchar(200)
+    territorydescription varchar(200)
+)
+
+
+CREATE TABLE customer_dim
+(
+    customerid varchar(200)
+    customertypeid varchar(200)
+    customerdesc text
+    address	varchar(200)
+    city varchar(200)
+    region varchar(200)
+    country	varchar(200)
+    phone varchar(200)
+    fax	varchar(200)
+    postalcode	varchar(200)
+    companyname	varchar(200)
+    contactname	varchar(200)
+    contacttitle varchar(200)
+)
+
+
+CREATE TABLE shippers_dim
+(
+    orderid	smallint
+    shipperid	smallint
+    freight	real
+    shipname	varchar(200)
+    companyname	varchar(200)
+    phone	varchar(20)
+    shipaddress	varchar(300)
+    shipregion	varchar(200)
+    shipcountry	varchar(100)
+    shippostalcode	varchar(20)
+    shipcity	varchar(200)
+)
+
+
+CREATE TABLE products_dim
+(
+    productid	smallint
+    productname	varchar(200)
+    categoryid	smallint
+    categoryName	varchar(5)
+    Description	Text
+    unitsinstock	smallint
+    quantityperunit	varchar(200)
+    unitsonorder	smallint
+    reorderlevel	smallint
+    discontinued	integer
+    unitprice	real
+    supplierid	smallint
+    companyname	varchar(200)
+    contactname	varchar(200)
+    contacttitle	varchar(200)
+    address	varchar(200)
+    city	varchar(200)
+    postalcode	varchar(200)
+    country	varchar(200)
+    region	varchar(200)
+    phone	varchar(200)
+    fax	varchar(200)
+    homepage	text
+)
